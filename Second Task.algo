@@ -1,0 +1,22 @@
+function insertionSort(arr) {
+  for (let i = 1; i < arr.length; i++) {
+    // Pick the current element to be inserted
+    let currentElement = arr[i];
+    let j = i - 1;
+
+    // Move elements of the sorted sequence that are greater than the current element
+    // to one position ahead of their current position
+    while (j >= 0 && arr[j] > currentElement) {
+      arr[j + 1] = arr[j];
+      j--;
+    }
+
+    // Insert the current element into its correct position in the sorted sequence
+    arr[j + 1] = currentElement;
+  }
+}
+
+// Example usage:
+const arrayToSort = [5, 2, 9, 3, 1];
+insertionSort(arrayToSort);
+console.log("Sorted Array: " + arrayToSort); // [1, 2, 3, 5, 9]
